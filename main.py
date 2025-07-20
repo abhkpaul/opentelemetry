@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 from typing import Optional
 import secrets
 import os
+import uvicorn
 
 # Generate keys if not exists (in real app, use secure key management)
 if not os.path.exists("private_key.pem") or not os.path.exists("public_key.pem"):
@@ -185,6 +186,6 @@ async def sensitive_action(
     
     return {"status": "Action performed"}
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run(app, host="0.0.0.0", port=8000)
